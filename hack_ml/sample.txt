@@ -1,0 +1,6 @@
+@255
+D=M
+(CHK)
+M=A;JMP
+D=M
+D=A
