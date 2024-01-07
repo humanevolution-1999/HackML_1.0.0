@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Additional head elements (stylesheets, scripts, etc.) can be added here -->
+</head>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'assembler/signup_style.css' %}">
+
+<body>
+    <div>
+        <ul class="nav_bar">
+            <li class="nav_bar "><a href="about" class ="nav_link">ABOUT</a></li>
+            <li class="nav_bar right"><a href="login" class="nav_link">LOGIN</a></li>
+            <li class="nav_bar right"><a href="signup" class="nav_link">SIGN UP</a></li>
+          </ul>
+    </div>
+    <h1 id="project_title">Welcome to Login Page!</h1>
+    <form action="login_request" class= "form_style" method="post">
+        {% csrf_token %}
+        <!-- Form fields go here -->
+        <label for="name">User name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <br>
+        <br>
+
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <br>
+        <br>
+        <br>
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}><strong>{{ message }}</strong></p>
+        {% endfor %}
+    {% endif %}
+    <p class="read_more">Read more about us here</p>
+
+<div class="footer">
+    <p class ="footer_content">©Copyright 2050 by nobody. All rights reversed.</p>
+</div>
+    
+
+</body>

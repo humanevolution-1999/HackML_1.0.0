@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Additional head elements (stylesheets, scripts, etc.) can be added here -->
+</head>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'assembler/home_page_style.css' %}">
+
+<body>
+    <!-- Content of the webpage goes here -->
+    <div>
+        <ul class="nav_bar">
+            <li class="nav_bar "><a href="about" class ="nav_link">ABOUT</a></li>
+            <li class="nav_bar right"><a href="login" class="nav_link">LOGIN</a></li>
+            <li class="nav_bar right"><a href="signup" class="nav_link">SIGN UP</a></li>
+          </ul>
+    </div>
+
+    <div id="home_page_content">
+        <h1 id="project_title"> Hack.ML</h1>
+        <p class="home_page_content_body">
+            Real time
+        </p>
+        <p class="home_page_content_body">
+            Interpreter
+        </p>
+        <p class="home_page_content_body">
+            of Hack
+        </p>
+        <p class="home_page_content_body">
+            Machine Language<span class="cursor"></span>
+        </p>
+    </div>
+    <div class="footer">
+        <p class ="footer_content">©Copyright 2050 by nobody. All rights reversed.</p>
+    </div>
+  <!---<script src="{% static 'assembler/body_content_style.js' %}"></script>-->
+</body>
+
+</html>

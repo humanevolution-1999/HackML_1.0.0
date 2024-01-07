@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- Additional head elements (stylesheets, scripts, etc.) can be added here -->
+</head>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'assembler/about.css' %}">
+<body>
+    <div class="navigation">
+        <ul class="nav_bar"> 
+            <li class="left"> <a href="../assembler" class="nav_link">HOME</a></li>
+            <li class="default_space"></li>
+            <li class="right"> <a href="signup" class="nav_link">SIGNUP</a></li>
+            <li class="right"> <a href="" class="nav_link">TUTORIAL</a></li>
+        </ul>
+        <ul class="topics_bar"> 
+            <li class="topics"> <a href="#what_is_this" class="topic_nav_link">What is this?</a></li>
+            <li class="topics"> <a href="#hack_architecture" class="topic_nav_link">Hack architecture</a></li>
+            <li class="topics"> <a href="#hack_assembly_language" class="topic_nav_link">Hack Assembly Language</a></li>
+            <li class="topics"> <a href="#hackML" class="topic_nav_link">More about HackML</a></li>
+            <li class="topics"> <a href="#Tutorial" class="topic_nav_link">Tutorial</a></li>
+            <li class="topics"> <a href="mailto:rana.madhvendra@gmail.com" class="topic_nav_link">Contact me!</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <section id="what_is_this">
+            <h2 id="project_title">Welcome to the HackML Interpreter, I am so glad you are here!</h1>
+            <p> This is an interactive website where you can get real time compiled Machine Language Instructions
+                for Hack Assembly Language. This project is a brainchild of mine, aimed at helping others who are trying to build computers form
+                first principles and even thinking about it. The inspiration for this project is this amazing book - 
+                "The Elements of Computing Systems: Building a Modern Computer from First Principles"
+                The intepreter here covnverts the Hack Assembly Language into Machine Code Instructions understood by the Hack Computer Architecture.
+            </p>
+        </section>
+        <section id="hack_architecture">
+            <div>
+                <iframe width="700" height="350" src="https://www.youtube.com/embed/vOkTHX5BVV4" title="Hack CPU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <h3 class="section_heading"> So, what is a Hack Architecture anyway?</h3>
+                <p>Hack Architecture is a simple computer based on Von-Neuman Architecture that enables implementation of simple enough instruction sets
+                    to function as a general purpose computer. The Hack computer is based on Harvard Architecture where the instruction and the data memory are separate, 
+                    and registers in CPU access them as and when required. The Hack Computer is fundamentally built on NAND and DFF gates and boasts of a separate data and instruction
+                    memory, both addressable by an Address Register in the CPU. When the computer is turned on, the ROM loads the OS Kernel into
+                    the main memory and then the OS further readies the computer to take user input.
+                </p>
+            </div>
+        </section>
+        <section id="hack_assembly_language">
+            <table>
+                <caption><b>Instruction types for Hack Assembly Language</b></caption>
+                <thead>
+                    <tr>
+                        <th>Symbolic Instruction</th>
+                        <th>Binary Code</th>
+                        <th>Implication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@x</td>
+                        <td>0vvvvvvvvvvvvvvv</td>
+                        <td>Address instruction to be interpreted by the data register</td>
+                    </tr>
+                    <tr>
+                        <td>dest = comp; jmp</td>
+                        <td>111acccccccdddjjj</td>
+                        <td>Computation instruction to be followed by the CPU</td>
+                    </tr>
+                    <tr>
+                        <td>(XXX)</td>
+                        <td>NA</td>
+                        <td>The goto instruction given by the symbol</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="section_heading"> The Hack Assembly Language</h3>
+            <p>
+                Although in principle, one can always provide instruction sets to the computer in machine language, Assembly language
+                tends to make the job easier by abstracting the various aspects of machine instructions with human understandable
+                symbols. Hack Assembly Language does the same for Hack Computers by encoding the information in terms of symbols and 
+                allowing user to use variables to represent the address memory. Broadly these are the few things to keep in mind about the
+                Hack Assembly Language-
+            </p>
+                <ul class="para_points">
+                    <li>In Hack Architecture, the address register selects both the ROM and RAM adress. So in essence, the current queried address depends on 
+                        use case. Refer here for example</li>
+                    <li>The Hack Assembly Language feature three different types of instructions shown in the table. In addition, goto instruction simply directs the 
+                        computer to associate the symbol with the succeeding line number without any actual machine instruction. Refer here for example  </li>
+                    <li>The Hack Assembly Language provides functionality to declare variables for ease of use. 
+                        The user declared variable address starts at 16 and increments further as we define more variables. 
+                        In addition, there are predefined symbols as well that refer to a specific pre-defined address. Refer here</li>
+                </ul>
+            <p>Click <a href="https://docs.google.com/document/d/1_uTLUXYg3dGHwOheqvv28LAs47FenTGva09mRA2zfyM/edit" target="_blank">here</a> to find out the exact instruction sets and the syntax rules</p>
+        </section>
+        <section id="hackML">
+            <h3 class="section_heading"> How is HackML developed?</h3>
+            <p>
+                HackML is completely written in C++. On a high level, it functions as given below-
+                <ul class="para_points">
+                    <li>In the first go, the program reads the user input given in Hack Assembly Language and parses the variables in the first go. If there is any error in the way
+                        symbols are defined, the program terminates with an error
+                    </li>
+                    <li>Assuming that all the symbols are defined properly, the symbols are recorded and the value stored in a symbol table. The internal
+                        symbols are initiated by this point.
+                    </li>
+                    <li>In the second go, the computation instruction statements are parsed and matched with the computation universe of the Hack ALU. 
+                        If at any stage, that is at destination, computation and jump, the instruction is found to be invalid,
+                    the program terminates throwing the corresponding error </li>
+                    <li>
+                        Finally, as all the elements are parsed, the coder module provides binary code of all the parsed symbols and 
+                        instructions.
+                    </li>
+                </ul>
+            </p>
+        </section>
+        <section id="Tutorial">
+            <h3 class="section_heading"> Let's see some basic examples!</h3>
+            <p>
+                Let's get you started on the tutorial to write programs in Hack Assembly Language!
+            </p>
+            <h4 class="section_sub_heading"> <u>Entering a constant </u></h4>
+            <p class="code_section">
+                @17
+            </p>
+            <p>
+                Constants in the Hack Computer are always loaded using Address Registers. A is the symbol in the Hack
+                Assembly Language for it.
+            </p>
+            <h4 class="section_sub_heading"><u>Accessing Memory Content</u></h4>
+            <p class="code_section">
+                // D=17 (D refers to the Data Register)
+                <br>
+                @17
+                <br>
+                D=A
+                <br>
+                <br>
+                // RAM[100]=17
+                <br>
+                @17
+                <br>
+                D=A
+                <br>
+                @100
+                <br>
+                // M refers to the memory register
+                <br>
+                M=D
+                <br>
+                <br>
+                // RAM[200] = RAM[100]
+                <br>
+                @100
+                <br>
+                D=M
+                <br>
+                @200
+                <br>
+                M=D
+                <br>
+            </p>
+            <p>
+                D stores the Data and M refers to the data memory.
+            </p>
+            <h4 class="section_sub_heading"><u>Branching examples</u></h4>
+            <p class="code_section">
+                // goto 29
+                <br>
+                @29
+                <br>
+                0;JMP
+                <br>
+                <br>
+                // if D>0 goto 63
+                <br>
+                @63
+                <br>
+                D;JGT
+                <br>
+            </p>
+            <p>
+                A register simultaneously accesses the Data and Instruction Memory together. What is used depends on the 
+                programming instruction as we saw in the earlier cases.
+            </p>
+            <h4 class="section_sub_heading"><u>Variable use examples</u></h4>
+            <p class="code_section">
+                // x = -1
+                <br>
+                @x
+                <br>
+                M=-1
+                <br>
+                <br>
+                // count = count-1
+                <br>
+                @count
+                <br>
+                M=M-1
+                <br>
+                <br>
+                //sum = sum + x
+                <br>
+                @sum
+                <br>
+                D=M
+                <br>
+                @x
+                <br>
+                D=D+M
+                <br>
+                @sum
+                <br>
+                M=D
+            </p>
+            <p>
+                Variables are declared by the users to abstract away the memory requirements in a program.
+            </p>
+            <p>
+                <br>
+                I hope things are to a level where you can start writing codes in Hack Assembly Language now. Let's go!
+            </p>
+        </section>
+        
+    </div>
+
+</body>

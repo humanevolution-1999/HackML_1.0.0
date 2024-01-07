@@ -1,0 +1,155 @@
+body {
+    background: #000500;
+    color: #FFF;
+    font-family: monospace;
+    font-size: 30px;
+    margin: 0;
+}
+
+p{
+    font-size: 1rem;
+    margin: 0;
+}
+
+#project_title {
+    color: #FFF;
+    font-size: 2.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: underline;
+}
+
+.navigation
+{
+    position: sticky;
+    top:0;
+    width: 100vw;
+}
+
+.nav_bar
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    background-color: rgb(28, 63, 3);
+}
+
+
+.nav_link
+{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 0.5em;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+
+.right{
+    flex:1;
+    text-align: center;
+}
+
+.left{
+    flex:0.7;
+    text-align: center;
+}
+
+.default_space
+{
+    flex:9;
+}
+
+.topics_bar
+{
+    margin: 0;
+    padding: 0;
+    height: 7vh;
+    width: 100vw;
+    display: flex;
+    list-style-type: none;
+    background-color: rgb(13, 152, 52)
+}
+
+.topics
+{
+    flex: 1;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    text-align: center;
+}
+
+.topic_nav_link
+{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 0.5em;
+
+}
+
+.content
+{
+    margin: 15px;
+    line-height: 2;
+}
+
+.section_heading
+{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+iframe
+{
+    float: right;
+}
+
+
+table {
+    float: right;
+    width: 40vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.7rem;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #5b5555;
+}
+
+.para_points
+{
+    margin-top: 10px;
+}
+
+.para_points li
+{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+caption{
+    caption-side: bottom;
+}
+.section_sub_heading
+{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.code_section
+{
+    margin-top: 0;
+    background-color: #5b5555;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding-left: 10px;
+}
+

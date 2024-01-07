@@ -1,0 +1,92 @@
+body {
+    background: #000500;
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+}
+
+#project_title {
+    color: #FFF;
+    font-family: Kameron;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.nav_bar
+{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.nav_link
+{
+    color: #FFF;
+}
+
+.left
+{
+    margin-left: 1%
+}
+
+.right{
+    float: right;
+    margin-right: 1%;
+}
+
+#home_page_content
+{
+    margin-top: 5%;
+    position: relative;
+}
+
+.home_page_content_body
+{
+    position: relative;
+    width: 40%;
+    color: #FFF;
+    font-family: Kameron;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+}
+.cursor {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 10px;
+    width: 0.1em; /* Adjust the cursor width as needed */
+    height: 0.8em; /* Adjust the cursor height as needed */
+    background-color: white; /* Set the cursor color to white */
+    animation: blinkCursor 0.7s infinite; /* Blinking animation */
+    position: absolute;
+    bottom: 5%;
+    /*top: 80%; /* Adjust the cursor position as needed */
+}
+
+@keyframes blinkCursor {
+    0%, 100% {
+        opacity: 0; /* Invisible */
+    }
+    50% {
+        opacity: 1; /* Visible */
+    }
+}
+
+.footer_content
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: #FFF;
+    font-family: Kameron;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    flex-shrink: 0;
+}

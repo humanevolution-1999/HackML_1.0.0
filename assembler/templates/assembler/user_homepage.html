@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Additional meta tags, stylesheets, or scripts can be included here -->
+    {%load static %}
+    <link rel="stylesheet" href="{% static 'assembler/user_homepage.css' %}">
+</head>
+<body>
+    <ul class="nav_bar"> 
+        <li class="left"> <a href="user_homepage" class="nav_link">HOME</a></li>
+        <li class="right"> <a href="user_logout" class="nav_link">LOGOUT</a></li>
+        <li class="right"> <a href="../about" class="nav_link">TUTORIAL</a></li>
+    </ul>
+    <h2> Welcome {{user}}, to the real time HackML Interpreter!</h2>
+    <div class="intrprtr">
+        <div>
+            <form id="my_form" class="int_area" action="ml_interpreter" method="post">
+                <ul>
+                    {% csrf_token %}
+                    <li class="ml_box">
+                        <label for="hack_assembly"></label>
+                        {% if input_file %}
+                        <textarea id="hack_assembly" name="input_file" placeholder="Input the Hack Assembly File here">{{input_file}}</textarea>
+                        {% else %}
+                        <textarea id="hack_assembly" name="input_file" placeholder="Input the Hack Assembly File here"></textarea>
+                        {% endif %}
+                    </li>
+                    <!--<li class="button" >
+                        <button class="submit_button" type="submit">Convert</button>
+                    </li>-->
+                </ul>
+            </form>
+        </div>
+        <div>
+            {% if output_file %}
+            <p class="output_area">
+                {% for line in output_file %}
+                    {{line}}
+                    <br>
+                {% endfor %}
+            </p>
+            {% else %}
+            <p class="output_area_default">
+            Output area in Hack Machine Language
+            {% endif %}
+            </p>
+        </div>
+    </div>
+    <div>
+        <button form="my_form" class="submit_button" type="submit">Convert</button>
+        <button class="save_button">Save</button>
+    </div>
+</body>
+</html>

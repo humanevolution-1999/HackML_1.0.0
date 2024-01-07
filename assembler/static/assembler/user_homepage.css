@@ -1,0 +1,130 @@
+body {
+    background: #000500;
+    color: #FFF;
+    font-family: Kameron;
+    font-size: 30px;
+}
+
+h1{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nav_bar
+{
+    margin-top: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li{
+    display: inline;
+}
+
+.nav_link
+{
+    color: #FFF;
+    /*text-decoration: none;*/
+    font-size: 0.6em;
+    margin-right: 10px;
+}
+
+
+.right{
+    float: right;
+    margin-right: 1%;
+}
+
+.left{
+    margin-left: 1%;
+}
+
+.intrprtr
+{
+    display: flex;
+    margin-top: 1%;
+    min-height: 70vh;
+}
+
+
+.intrprtr > div{
+    flex: 1;
+    
+}
+
+
+.int_area
+{
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid royalblue;
+    background-color:#FFF;
+}
+
+.int_area >ul{
+    margin: 0 0 0 0;
+    padding: 0;
+    height: 100%;
+}
+
+.ml_box
+{
+    display: block;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 0;
+}
+
+.submit_button
+{
+    margin-top: 5px;
+    position: absolute;
+    right:50%;
+}
+
+#hack_assembly
+{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    padding: 5px;
+    font-size: 0.6em;
+    color: #000500;
+}
+
+.output_area
+{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    background-color: #FFF;
+    color: black;
+    border: 2px solid royalblue;
+    font-size: 0.6em;
+    font-family: monospace;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.output_area_default
+{
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    background-color: #FFF;
+    color: rgb(112, 110, 110);
+    border: 2px solid royalblue;
+    font-size: 0.6em;
+    font-family: monospace;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.save_button{
+    margin-top: 5px;
+    float: right;
+}
+
+
+
