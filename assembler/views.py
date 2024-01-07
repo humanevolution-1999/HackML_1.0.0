@@ -56,7 +56,7 @@ def user_homepage(request,user_name):
     if request.user.is_authenticated:
         return render(request,"assembler/user_homepage.html",{"user":user, "input_file":request.session['assembler_input'] ,"output_file":request.session['assembler_output']})
     else:
-        return HttpResponseRedirect('/../assembler')
+        return HttpResponseRedirect('../')
 
 def ml_interpreter(request,user_name):
     user = get_object_or_404(User,username=user_name)
@@ -65,12 +65,12 @@ def ml_interpreter(request,user_name):
         request.session['assembler_output']= intepret(request.session['assembler_input'])
         return HttpResponseRedirect(reverse("assembler:user_homepage",args=(user_name,))) 
     else:
-        return HttpResponseRedirect('/../assembler')
+        return HttpResponseRedirect('../')
 
 
 def user_logout(request,user_name):
     logout(request)
-    return HttpResponseRedirect("/../assembler")
+    return HttpResponseRedirect("../")
 
 def login(request):
     if request.user.is_authenticated:
