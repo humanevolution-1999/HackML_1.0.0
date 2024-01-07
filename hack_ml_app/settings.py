@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-r+1+$5n-sq!by*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
+DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ## For example, for a site URL at 'web-production-3640.up.railway.app'
