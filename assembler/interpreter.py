@@ -11,16 +11,16 @@ def intepret(input_file):
         multiline_string += line + "\n"
     
     # Path to the directory containing the C++ files
-    cpp_directory = "/Users/rana.madhvendra/Desktop/Assembler_Hack/hack_ml"
+    cpp_directory = "../hack_ml"
 
     # List of C++ source files
     cpp_files = ["main.cpp", "coder.cpp", "parser.cpp", "symbol_table.cpp"]
 
     # Path to the compiled C++ program
-    cpp_program = os.path.join(cpp_directory, "cpp_function")
+    #cpp_program = os.path.join(cpp_directory, "cpp_function")
 
     # Compile the C++ program
-    compile_command = ["g++"] + cpp_files + ["-o", cpp_program]
+    compile_command = ["g++"] + cpp_files #+ ["-o", cpp_program]
     compilation_result = subprocess.run(compile_command, cwd=cpp_directory, stderr=subprocess.PIPE, text=True)
 
     if compilation_result.returncode != 0:
@@ -30,7 +30,7 @@ def intepret(input_file):
 
     # Construct the command to run the compiled C++ program with arguments
     print(multiline_string)
-    run_command = [cpp_program] + [multiline_string]
+    run_command = ['./a.out'] + [multiline_string]
 
     try:
         # Run the C++ program using subprocess
