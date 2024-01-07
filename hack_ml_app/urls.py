@@ -20,7 +20,7 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
-    path("assembler/", include("assembler.urls")),
+    path("", include("assembler.urls")),
     path('admin/', admin.site.urls),
 ]
 
