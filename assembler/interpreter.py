@@ -11,7 +11,7 @@ def intepret(input_file):
         multiline_string += line + "\n"
     
     # Path to the directory containing the C++ files
-    cpp_directory = "../hack_ml"
+    cpp_directory = "../../hack_ml"
 
     # List of C++ source files
     cpp_files = ["main.cpp", "coder.cpp", "parser.cpp", "symbol_table.cpp"]
