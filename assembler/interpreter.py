@@ -11,7 +11,10 @@ def intepret(input_file):
         multiline_string += line + "\n"
     
     # Path to the directory containing the C++ files
-    cpp_directory = "../hack_ml"
+    cpp_directory = "hack_ml"
+    absolute_path = os.path.abspath(cpp_directory)
+
+    print(f"Absolute Path: {absolute_path}")
 
     # List of C++ source files
     cpp_files = ["main.cpp", "coder.cpp", "parser.cpp", "symbol_table.cpp"]
